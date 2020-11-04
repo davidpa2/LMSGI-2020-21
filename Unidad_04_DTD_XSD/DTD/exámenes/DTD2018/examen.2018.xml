@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE videojuego SYSTEM "examen.2018.dtd">
+<videojuego nombre="GodOfWar">  
+    <juego titulo="GodOfWar" año="2005" plataformaInicial="PSVita" otrasPlataformas="PS2 PS3" />
+    <juego titulo="GodOfWarII" año="2007" plataformaInicial="PS2" otrasPlataformas="PS3 PSVita"/>
+    <juego titulo="GodOfWarIII" año="2010" plataformaInicial="PS3" otrasPlataformas="PS4"/>
+    <juego titulo="GodOfWarIV" año="2018" plataformaInicial="PS4"/>
+        <personaje>
+            <nombre estatura="alto">Kratos</nombre>
+            <tipo>semidios </tipo>
+            <arma>Hacha Leviatan</arma>
+            <descripcion>Muy alto y fuerte, arrasa con todo es el protagonista de &juego;</descripcion>
+        </personaje>
+        <personaje >
+            <nombre estatura="bajo">Atreus</nombre> 
+            <tipo>dios</tipo> 
+            <arma>Arco De Garra</arma> 
+            <descripcion>Pequeño y astuto, debe aprender las habilidades, ayudante de Kratos en la cuarta parte de &juego;</descripcion>
+        </personaje>
+        <personaje>
+            <nombre estatura="media">Faye</nombre>
+            <tipo>dios</tipo>
+            <descripcion>Madre de Atreus, es el motivo de que exista &juego; 4</descripcion>
+        </personaje>
+        <personaje>
+            <nombre estatura="media">Baldur</nombre>
+            <tipo>dios</tipo>
+            <arma>Puños</arma>
+            <descripcion>Fuerte rival de Kratos, hijo de Freya, las apariencias engañan</descripcion>
+        </personaje>
+        <personaje>
+            <nombre estatura="media">Freya</nombre> 
+            <tipo>dios</tipo>
+            <arma>arco</arma>
+            <descripcion>Domina la magia, ayuda a los protagonistas de &juego;</descripcion>
+        </personaje>
+        <personaje>
+            <nombre estatura="bajo">Brok</nombre>
+            <tipo>Es un enano</tipo>
+            <descripcion>El enano Brok, hermano de Sindri mantienen y mejoran las armas de los protagonistas</descripcion>
+        </personaje>
+        <personaje>
+            <nombre estatura="bajo">Sindri</nombre>
+            <tipo>Es un enano</tipo>
+            <descripcion>El enano Sindri, hermano de Brok mantienen y mejoran las armas de los protagonistas</descripcion>
+        </personaje>
+</videojuego>

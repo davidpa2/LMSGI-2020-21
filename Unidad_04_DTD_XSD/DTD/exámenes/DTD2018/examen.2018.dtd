@@ -1,0 +1,14 @@
+<!ELEMENT videojuego (juego*)>
+<!ATTLIST videojuego nombre CDATA #REQUIRED>
+<!ELEMENT juego (personaje?)>
+<!ATTLIST juego titulo CDATA #REQUIRED
+                año CDATA #REQUIRED
+                plataformaInicial ID #REQUIRED
+                otrasPlataformas IDREFS #IMPLIED>
+<!ELEMENT personaje (nombre, tipo, arma?, descripcion)>
+<!ELEMENT nombre (#PCDATA)>
+<!ATTLIST nombre estatura CDATA #REQUIRED>
+<!ELEMENT tipo (#PCDATA | dios | semidios)*>
+<!ELEMENT arma (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ENTITY juego "God of War">
