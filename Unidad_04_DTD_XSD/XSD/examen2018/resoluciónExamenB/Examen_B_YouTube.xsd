@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="youtube" type="tipoYoutube"/>
+
+    <xs:complexType name="tipoYoutube">
+        <xs:all>
+            <xs:element name="videos" type="tipoVideos"/>
+            <xs:element name="publicidad" type="xs:string"/>
+            <xs:element name="idiomasDisponibles" type="tipoIdioma"/>
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="tipoVideos">
+        <xs:choice>
+            <xs:element name="video" type="tipoVideo"/>
+        </xs:choice>
+    </xs:complexType>
+    
+    <xs:complexType name="tipoVideo" mixed="true">
+        <xs:sequence>
+            <xs:element name="url" type="xs:string"/>
+            <xs:element name="visualizaciones" type="xs:integer"/>
+            <xs:element name="comentarios" type="tipoComentarios"/>
+            <xs:element name="subscriptores" type="tipoSubscriptores" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoComentarios">
+        <xs:all>
+            <xs:element name="buenos" type="xs:integer"/>
+            <xs:element name="malos" type="xs:integer"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="tipoSubscriptores">
+        <xs:choice>
+            <xs:element name="suscriptor" type="tipoSuscriptor"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="tipoSuscriptor">
+        <xs:all>
+            <xs:element name="fechaSubscripcion">
+                <xs:complexType>
+                    <xs:attribute name="dia" type="xs:integer"/>
+                    <xs:attribute name="mes" type="xs:string"/>
+                    <xs:attribute name="anyo">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="2015"/>
+                                <xs:enumeration value="2016"/>
+                                <xs:enumeration value="2017"/>
+                                <xs:enumeration value="2018"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="comentarios">
+                <xs:complexType>
+                    <xs:attribute name="cantidad" type="xs:integer"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="correoElectronico" type="tipoCorreoElectronico"/>
+            <xs:element name="idioma" type="xs:string"></xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="tipoCorreoElectronico">
+        <xs:all>
+            <xs:element name="usuario" type="xs:string"/>
+            <xs:element name="servidor">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="gmail" type="tipoVacio"/>
+                        <xs:element name="hotmail" type="tipoVacio"/>
+                        <xs:element name="yahoo" type="tipoVacio"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+        <xs:attribute name="completo" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipoVacio"></xs:complexType>
+</xs:schema>    

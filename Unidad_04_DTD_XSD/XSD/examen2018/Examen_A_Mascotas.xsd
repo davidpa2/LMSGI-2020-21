@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tiendaMascotas" type="tipoMascotas"/>
+        
+<xs:complexType name="tipoMascotas">
+    <xs:sequence>
+        <xs:element name="reptiles" type="tipoReptiles"></xs:element>
+        <xs:element name="mamiferos" type="tipoMamiferos"></xs:element>
+        <xs:element name="unidadesMedida" type="xs:string"></xs:element>
+        <xs:element name="direccion" type="tipoDireccion"></xs:element>
+        <xs:element name="clientes" type="tipoClientes"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"></xs:attribute>
+</xs:complexType>
+
+
+<xs:complexType name="tipoReptiles">
+    <xs:sequence>
+        <xs:element name="reptil" maxOccurs="unbounded" type="tipoReptil"></xs:element>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoReptil" mixed="true">
+    <xs:sequence>
+        <xs:element name="peso" type="unidadDeMedidaPeso"/>
+        <xs:element name="longitud" type="xs:string"/>
+        <xs:element name="edad" type="xs:string"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoMamiferos">
+    <xs:sequence>
+        <xs:element name="mamifero" maxOccurs="unbounded" type="tipoMamifero"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoMamifero" mixed="true">
+    <xs:all>
+        <xs:element name="nombre" type="tipoNombreMamifero"/>
+        <xs:element name="raza" type="tipoRazaMamifero"/>
+        <xs:element name="descripcion" type="xs:string"/>
+    </xs:all>
+</xs:complexType>
+
+<xs:complexType name="tipoNombreMamifero">
+    <xs:attribute name="valor">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value=".+"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="tipoRazaMamifero">
+    <xs:choice>
+        <xs:element name="perro" type="tipoVacio"/>
+        <xs:element name="orca" type="tipoVacio"/>
+        <xs:element name="delfin" type="tipoVacio"/>
+    </xs:choice>
+</xs:complexType>
+
+<xs:complexType name="tipoVacio"/>
+
+<xs:complexType name="tipoDireccion">
+    <xs:sequence>
+        <xs:element name="postal" type="xs:string"/>
+        <xs:element name="telefono" type="xs:string"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoClientes">
+    <xs:sequence>
+        <xs:element name="cliente" type="tipoCliente"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoCliente">
+    <xs:sequence>
+        <xs:element name="postal" type="xs:string"/>
+        <xs:element name="telefono" type="xs:integer"/>
+        <xs:element name="email" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="nombre" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="unidadDeMedidaPeso">
+    <xs:attribute></xs:attribute>
+</xs:complexType>
+
+</xs:schema>
