@@ -37,7 +37,7 @@
             <xs:element name="suscriptor" type="tipoSuscriptor"/>
         </xs:choice>
     </xs:complexType>
-
+ 
     <xs:complexType name="tipoSuscriptor">
         <xs:all>
             <xs:element name="fechaSubscripcion">
